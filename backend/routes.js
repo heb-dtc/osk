@@ -1,4 +1,4 @@
-var tutorial = require('./models/tutorial');
+var tutorial = require('./model/tutorial');
 
 module.exports = {
     configure: function(app) {
