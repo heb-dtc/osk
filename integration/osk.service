@@ -1,0 +1,14 @@
+[Unit]
+Description=OSK frontend
+
+[Service]
+ExecStart=/home/flo/dev/osk/frontend/server/index.js
+Restart=always
+User=flo
+Group=flo
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/flo/dev/osk/frontend/server
+
+[Install]
+WantedBy=multi-user.target

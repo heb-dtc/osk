@@ -1,0 +1,14 @@
+[Unit]
+Description=OSK API
+
+[Service]
+ExecStart=/home/flo/dev/osk/backend/app.js
+Restart=always
+User=flo
+Group=flo
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/flo/dev/osk/backend
+
+[Install]
+WantedBy=multi-user.target
