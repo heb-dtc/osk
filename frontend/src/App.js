@@ -23,14 +23,14 @@ class App extends Component {
             <div>
                 <h1>{"Office of Shared Knowledge"}</h1>
                 <div className="floated-img">
-                {this.state.posts.map(post =>
+                    {this.state.posts.map(post =>
                         <a href={post.link}>
-                        <figure>
-                            <img src={post.image} alt=""/>
-                            <figcaption>{post.description}</figcaption>
-                        </figure>
+                            <figure>
+                                <img src={post.image} alt=""/>
+                                <figcaption>{post.description}</figcaption>
+                            </figure>
                         </a>
-                )}
+                    )}
                 </div>
             </div>
         );
