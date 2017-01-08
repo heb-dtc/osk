@@ -1,0 +1,4 @@
+CREATE TABLE tags (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name CHAR(50));
+CREATE TABLE tutorial (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name CHAR(50), link TEXT, description TEXT, image TEXT);
+CREATE TABLE tag_links (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, tag INT, tutorial INT, CONSTRAINT fk_tag FOREIGN KEY(tag) REFERENCES tags(id), CONSTRAINT fk_tutorial FOREIGN KEY(tutorial) REFERENCES tutorial(id));
+INSERT INTO tags (name) VALUES ('elderly');
