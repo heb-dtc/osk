@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory} from 'react-router';
 import App from './App';
-import AddTutorial from './AddTutorial';
+import AddTutorial from './components/AddTutorial';
 import './index.css';
 
 ReactDOM.render(

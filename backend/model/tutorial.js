@@ -3,6 +3,7 @@ var connection = require('../connection');
 function Tutorial() {
     
     this.get = function (res) {
+        console.log('fetching tutorials list');
         connection.acquire(function (err, con) {
             con.query('select * from tutorial', function (err, result) {
                 con.release();
