@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ImageView from './components/ImageView';
 
 class App extends Component {
      constructor() {
@@ -11,7 +12,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/tutorial`)
+        axios.get(`http://localhost:8081/tutorial`)
             .then(res => {
                 const posts = res.data.map(obj => obj);
                 this.setState({posts});
@@ -26,7 +27,7 @@ class App extends Component {
                     {this.state.posts.map(post =>
                         <a href={post.link}>
                             <figure>
-                                <img src={post.image} alt=""/>
+                                <ImageView src={post.image} alt={post.description}/>
                                 <figcaption>{post.description}</figcaption>
                             </figure>
                         </a>
