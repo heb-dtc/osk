@@ -35,7 +35,7 @@ class AddTutorial extends Component {
     }
 
     handleSubmit(event) {
-        axios.post('http://localhost:5000/tutorial', {name: this.state.name, link: this.state.link,
+        axios.post('http://localhost:8081/tutorial', {name: this.state.name, link: this.state.link,
             description: this.state.description, image: this.state.image})
             .then(res => {
                 if (res.data.status === 0 ) {
@@ -49,25 +49,28 @@ class AddTutorial extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" value={this.state.name} onChange={this.handleNameChange} />
-                </label>
-                <label>
-                    Link:
-                    <input type="text" value={this.state.link} onChange={this.handleLinkChange} />
-                </label>
-                <label>
-                    Description:
-                    <input type="text" value={this.state.description} onChange={this.handleDescriptionChange} />
-                </label>
-                <label>
-                    Image:
-                    <input type="text" value={this.state.image} onChange={this.handleImageChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div>
+                <h1>{"Add tutorial"}</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Name:
+                        <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+                    </label>
+                    <label>
+                        Link:
+                        <input type="text" value={this.state.link} onChange={this.handleLinkChange} />
+                    </label>
+                    <label>
+                        Description:
+                        <input type="text" value={this.state.description} onChange={this.handleDescriptionChange} />
+                    </label>
+                    <label>
+                        Image:
+                        <input type="text" value={this.state.image} onChange={this.handleImageChange} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
         );
     }
 }
