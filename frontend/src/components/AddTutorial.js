@@ -1,5 +1,6 @@
 import React, { Component, NameForm } from 'react';
 import axios from 'axios';
+import Flavor from '../Constants';
 
 class AddTutorial extends Component {
     constructor(props) {
@@ -35,7 +36,7 @@ class AddTutorial extends Component {
     }
 
     handleSubmit(event) {
-        axios.post('http://localhost:8081/tutorial', {name: this.state.name, link: this.state.link,
+        axios.post(Flavor.BASE_URL + '/tutorial', {name: this.state.name, link: this.state.link,
             description: this.state.description, image: this.state.image})
             .then(res => {
                 if (res.data.status === 0 ) {

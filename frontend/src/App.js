@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ImageView from './components/ImageView';
+import Flavor from './Constants'
 
 class App extends Component {
      constructor() {
@@ -12,7 +13,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8081/tutorial`)
+        axios.get(Flavor.BASE_URL + `/tutorial`)
             .then(res => {
                 const posts = res.data.map(obj => obj);
                 this.setState({posts});

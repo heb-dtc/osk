@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Flavor from '../Constants';
 
 class EditTutorial extends Component {
      constructor() {
@@ -11,7 +12,7 @@ class EditTutorial extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8081/tutorial`)
+        axios.get(Flavor.BASE_URL + `/tutorial`)
             .then(res => {
                 const posts = res.data.map(obj => obj);
                 this.setState({posts});
