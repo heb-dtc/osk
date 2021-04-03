@@ -1,0 +1,12 @@
+version: '2'
+services:
+    osk_backend:
+      build: make
+      ports:
+       - "5000:5000"
+      depends_on:
+       - osk_repository
+      environment:
+       - DATABASE_HOST=db
+    osk_repository:
+      build: ./repository
